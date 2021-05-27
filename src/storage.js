@@ -21,7 +21,7 @@ const AppLocalStorage = (() => {
   };
 
   const getProjectByTitle = (projectTitle) => {
-    const projectIndex = parseData('projects').map(project => project.title).indexOf(projectTitle);
+    const projectIndex = parseData('projects').map((project) => project.title).indexOf(projectTitle);
     return projectIndex;
   };
 

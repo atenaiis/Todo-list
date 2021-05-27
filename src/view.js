@@ -60,7 +60,7 @@ const View = (() => {
   };
 
   // eslint-disable-next-line no-alert
-  const alertForm = errorString => alert(errorString);
+  const alertForm = (errorString) => alert(errorString);
 
   const showSaveBtn = (projectId) => {
     const saveBtn = document.getElementById(`project-${projectId}`);
