@@ -1,37 +1,37 @@
-import Controller from './controller';
+import page from './page';
+import * as toDo from './toDo';
+import * as load from './load';
+import * as project from './project';
 
-window.onload = () => {
-  Controller.start();
-};
+let myProjects = [];
+myProjects = load.pageInit();
+page.displayProjectsBoards(myProjects);
 
-window.addProject = () => {
-  Controller.addProject();
-};
 
-window.addToDo = () => {
-  Controller.addToDo();
-};
-
-window.deleteProject = (projectId) => {
-  Controller.deleteProject(projectId);
-};
-
-window.deleteToDo = (projectId, toDoId) => {
-  Controller.deleteToDo(projectId, toDoId);
-};
-
-window.onProjectTitleClick = (projectId) => {
-  Controller.toggleSaveBtn(projectId);
-};
-
-window.onProjectClickSave = (projectId) => {
-  Controller.updateProjectTitle(projectId);
-};
-
-window.createSelectedModalList = (modalId, projectTitle) => {
-  Controller.addSelectedProjectsToModal(modalId, projectTitle);
-};
-
-window.updateToDo = (modalId, projectId, toDoId) => {
-  Controller.updateToDo(modalId, projectId, toDoId);
-};
+document.addEventListener('click', (e) => {
+  if (e.target && e.target.id === 'submit-project') {
+    const title = page.getTitle();
+    project.addProject(myProjects, title);
+  } else if (e.target && e.target.id === 'new-project') {
+    page.displayProjectForm();
+  } else if (e.target && e.target.id === 'new-todo') {
+    page.displayToDoForm(myProjects);
+  } else if (e.target && e.target.id === 'submit-todo') {
+    const info = page.getToDoInfo();
+    toDo.addToDo(myProjects, info);
+  } else if (e.target && (e.target.id).includes('remove-')) {
+    const buttonIndex = e.target.id.split('-');
+    myProjects = project.removeToDo(myProjects, buttonIndex[1], buttonIndex[2]);
+    load.reload();
+  } else if ((e.target && e.target.id === 'close') || (e.target && e.target.id === 'edit-form')) {
+    page.hideEditForm();
+  } else if (e.target && (e.target.id).includes('btnedit')) {
+    const buttonIndex = e.target.id.split('-');
+    page.displayEditForm(myProjects, buttonIndex[1], buttonIndex[2]);
+  } else if (e.target && (e.target.id).includes('change')) {
+    const buttonIndex = e.target.id.split('-');
+    const editToDoInfo = page.getEditToDoInfo();
+    myProjects = toDo.submitToDo(myProjects, buttonIndex[1], buttonIndex[2], editToDoInfo);
+    load.reload();
+  }
+});
