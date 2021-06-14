@@ -7,11 +7,9 @@
 
 
 
-### You can access a Live Demo [HERE](https://rawcdn.githack.com/atenaiis/Todo-list/3c4d49a32b2d687c3c844dd183ca5c58d405ba76/dist/index.html)
+### You can access a Live Demo [HERE](https://rawcdn.githack.com/atenaiis/Todo-list/b6e20c0c36dbf2930b9e2d1a0c29fdcfa9f99035/dist/index.html)
 
-![Screenshot](./src/imgs/screenshot1.png)
-
-![Screenshot](./src/imgs/creenshot2.png)
+![Screenshot](./src/images/screen1.png)
 
 ## Features
 
@@ -39,7 +37,15 @@ To get a local copy of this project running follow these simple steps.
 - To set Webpack and the dependencies run the command
 > `npm install`
 - Use your favorite browser to open the index.html file (located at the dist page)
+## Running tests
 
+This project contains Built tests using jest. To run the tests on your local machine you can run the following command on the project folder:
+ > `yarn test`
+
+ If you want to build customized tests, you should create new files or edit the files inside the tests/ folder.
+ The tests files should be always named with the extension .test.js
+ To set the watch mode and keep tracking the tests continuously while you build it you can run
+> `yarn test-watch`
 
 ## Authors
 
