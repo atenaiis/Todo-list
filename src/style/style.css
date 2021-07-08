@@ -1,46 +1,152 @@
-* {
-  font-family: monospace;
+body {
+  background-color: whitesmoke;
 }
 
-.add-section {
-  background-color: rgb(231, 216, 231);
-  margin: 0 auto;
-  border-radius: 1rem;
-  padding: 0;
+input,
+select {
+  margin-bottom: 8px;
 }
 
-.projects-container {
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: serif;
+  font-size: 70px;
+  text-align: center;
+  background-color: #949492;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.new-btns {
+  font-family: sans-serif;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.buttons {
+  width: auto;
+  margin: auto;
+}
+
+.content {
+  width: 100%;
+}
+
+h2 {
+  font-family: sans-serif;
+  width: auto;
+  background: whitesmoke;
+  padding: 8px;
+  font-size: 30px;
+}
+
+.board {
+  background-color: azure;
+  min-height: 480px;
+  width: 80%;
+  margin: 45px auto;
+  padding: 10px;
+  border: 15px solid #202020;
+}
+
+#new-project {
+  background: #800406;
+}
+
+#new-todo {
+  background: #094903;
+}
+
+.todos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.todo-item {
+  padding: 5px;
+  background: #800406;
+  min-height: 170px;
+  margin: 5px;
+}
+
+h3 {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: whitesmoke;
+  width: auto;
+  padding: 8px;
+  font-size: 20px;
+}
+
+.todo-item button {
+  font-family: sans-serif;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 8px;
+}
+
+.hover-under:hover {
+  text-decoration: underline;
+}
+
+.addForms {
+  background-color: azure;
+  border: 15px solid #000000;
+  width: 30%;
+  min-height: 300px;
+  padding: 10px;
+  margin: 25px auto;
+}
+
+.add-forms {
+  background: whitesmoke;
+  padding: 15px;
+  width: auto;
+  margin: 10px auto;
+}
+
+.display-none {
+  display: none !important;
+}
+
+#edit-form {
   height: 100vh;
-}
-
-.project-style {
-  margin: 2rem;
-  min-width: 250px;
-  box-shadow: 0 20px 25px -5px rgba(2, 2, 2, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  padding: 1rem;
-  border-radius: 2rem;
-}
-
-.project-header {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom: solid 1px lightblue;
-  padding-bottom: 1rem;
+  justify-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(24, 23, 23, 0.836);
 }
 
-.project-header h3 {
-  margin: 0 0.2rem;
+#close {
+  text-align: right;
+  background-color: transparent;
+  margin: 0;
+  font-size: 45px;
+  color: red;
 }
 
-.todo-style {
-  margin: 2rem 0;
-  padding: 1rem;
-  border-radius: 2rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.todo-style p {
-  margin: 0.5rem;
+#close:hover {
+  cursor: pointer;
 }
